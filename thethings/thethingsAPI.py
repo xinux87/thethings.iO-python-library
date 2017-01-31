@@ -87,8 +87,11 @@ class ThethingsAPI(object):
                 self._data.append({'key': str(key), 'value': value,
                                    'datetime': dt})
 
+    # key: string
+    # value: number or string
+    # lat: latitude
+    # lon: longitude
     def addVarGeo(self, key, value, lat, lon):
-
         self._data.append({'key': str(key), 'value': value,
                                    'geo': {'lat': lat, 'long': lon}})
 
