@@ -61,23 +61,18 @@ class ThethingsAPI(object):
                 print(result["message"])
                 return False
 
-                # key: string
-                # value: number or string
-                # dt: Custom timestamp format '2015-10-28T12:18:56.799Z' or datetime
+    # key: string
+    # value: number or string
+    # lat: latitude
+    # lon: longitude
 
-    def addvarGeo(self, key, value, lat, lon):
+    def addVarGeo(self, key, value, lat, lon):
         """ Add the pair {key : value} to the list of pending
         data to be written to thethings.io. This function can
         be called any times to add more variables to be sent.
         Call the "write" function to actually write the values.
 
-        Args:
-            key: string key to write.
-            value: value
-            dt: custom timestamp either string
-            '2015-10-28T12:18:56.799Z' or
-            python datetype.
-
+        With latitude and longitude, for geopositionen the sended data.
         """
 
         self._data.append({'key': str(key), 'value': value,
