@@ -87,6 +87,10 @@ class ThethingsAPI(object):
                 self._data.append({'key': str(key), 'value': value,
                                    'datetime': dt})
 
+    def addVarGeo(self, key, value, lat, lon):
+
+        self._data.append({'key': str(key), 'value': value,
+                                   'geo': {'lat': lat, 'long': lon}})
 
     def write(self):
         """ Actually write the values to theThings.iO. See
